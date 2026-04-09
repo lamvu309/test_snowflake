@@ -1,0 +1,25 @@
+snowflake_transform:
+  outputs:
+    dev:
+      type: snowflake
+      account: wtxmxbo-ho19846
+      user: LAMVU
+      password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}"
+      role: ACCOUNTADMIN
+      database: CRYPTO_DB
+      warehouse: COMPUTE_WH
+      schema: STAGING
+      threads: 1
+
+    prod:
+      type: snowflake
+      account: wtxmxbo-ho19846
+      user: LAMVU
+      password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}"
+      role: ACCOUNTADMIN
+      database: CRYPTO_DB
+      warehouse: COMPUTE_WH
+      schema: PROD
+      threads: 4
+
+  target: dev
