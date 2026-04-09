@@ -1,0 +1,16 @@
+[project]
+name = "snowflake-dbt"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "vu",email = "vul@sendo.vn"}
+]
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "dbt-snowflake (>=1.11.4,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

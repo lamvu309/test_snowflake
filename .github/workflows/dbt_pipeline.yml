@@ -1,0 +1,50 @@
+name: dbt Pipeline
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 1 * * *'   # chạy mỗi ngày lúc 1:00 AM UTC
+  workflow_dispatch:        # cho phép chạy thủ công từ GitHub UI
+
+jobs:
+  dbt-run:
+    name: Run dbt (transform + test)
+    runs-on: ubuntu-latest
+
+    env:
+      DBT_SNOWFLAKE_PASSWORD: ${{ secrets.DBT_SNOWFLAKE_PASSWORD }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        run: pip install poetry==2.3.3
+
+      - name: Install dependencies
+        run: poetry install --no-root
+
+      - name: dbt debug (kiểm tra kết nối)
+        working-directory: snowflake_transform
+        run: poetry run dbt debug
+
+      - name: dbt run (transform)
+        working-directory: snowflake_transform
+        run: poetry run dbt run --target prod
+
+      - name: dbt test
+        working-directory: snowflake_transform
+        run: poetry run dbt test --target prod
+
+      - name: Upload dbt logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-logs
+          path: snowflake_transform/logs/

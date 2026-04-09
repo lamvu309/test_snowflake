@@ -1,0 +1,32 @@
+[0m22:33:09.102278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F368CED250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F36B9E0200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F36B9E12E0>]}
+
+
+============================== 22:33:09.105284 | cab83451-f417-40bf-a760-2e94c88b27aa ==============================
+[0m22:33:09.105284 [info ] [MainThread]: Running with dbt=1.11.8
+[0m22:33:09.106284 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Lam Vu\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init snowflake_transform', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:33:09.607270 [debug] [MainThread]: Starter project path: C:\Users\Lam Vu\AppData\Local\pypoetry\Cache\virtualenvs\snowflake-dbt-JHr1_tUl-py3.12\Lib\site-packages\dbt\include\starter_project
+[0m22:33:09.641812 [info ] [MainThread]: 
+Your new dbt project "snowflake_transform" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:33:09.642800 [info ] [MainThread]: Setting up your profile.
+[0m22:33:14.498288 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m22:33:14.498288 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m22:33:14.498288 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m22:36:32.569358 [info ] [MainThread]: Profile snowflake_transform written to C:\Users\Lam Vu\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:36:32.571367 [debug] [MainThread]: Command `dbt init` succeeded at 22:36:32.571367 after 203.69 seconds
+[0m22:36:32.571367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F36BF5F4A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F36E419CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F36D3E1F70>]}
+[0m22:36:32.572802 [debug] [MainThread]: Flushing usage events
+[0m22:36:34.026766 [debug] [MainThread]: An error was encountered while trying to flush usage events
