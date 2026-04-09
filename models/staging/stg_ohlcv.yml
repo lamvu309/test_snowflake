@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_ohlcv
+    description: "Cleaned and enriched OHLCV candlestick data"
+    columns:
+      - name: symbol
+        description: "Trading pair"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'SOLUSDT', 'XRPUSDT']
+
+      - name: open_time
+        description: "Candle open timestamp"
+        data_tests:
+          - not_null
+
+      - name: close_price
+        description: "Closing price"
+        data_tests:
+          - not_null
+
+      - name: volume
+        description: "Total volume traded"
+        data_tests:
+          - not_null

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: ohlcv_daily
+    description: "Daily OHLCV aggregated by symbol"
+    columns:
+      - name: symbol
+        data_tests:
+          - not_null
+
+      - name: trade_date
+        data_tests:
+          - not_null
+
+      - name: total_volume
+        data_tests:
+          - not_null
