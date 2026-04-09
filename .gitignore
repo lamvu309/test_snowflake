@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Environment
 .env
 *.env
@@ -11,3 +12,9 @@ snowflake_transform/logs/
 __pycache__/
 *.pyc
 .venv/
+=======
+
+target/
+dbt_packages/
+logs/
+>>>>>>> 796b97055de1d8c0453f57d71a6a04efc2178cec
