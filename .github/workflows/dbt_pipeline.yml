@@ -8,6 +8,31 @@ on:
   workflow_dispatch:        # cho phép chạy thủ công từ GitHub UI
 
 jobs:
+  load:
+    name: Ingest data into Snowflake
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install snowflake-connector-python
+
+      - name: Run COPY INTO
+        env:
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+        run: python scripts/load_snowflake.py
+
   dbt-run:
     name: Run dbt (transform + test)
     runs-on: ubuntu-latest
