@@ -4,7 +4,8 @@ snowflake_transform:
       type: snowflake
       account: wtxmxbo-ho19846
       user: LAMVU
-      password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}"
+      password: Hoksaodau123456@
+      # password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}"
       role: ACCOUNTADMIN
       database: CRYPTO_DB
       warehouse: COMPUTE_WH
@@ -15,7 +16,8 @@ snowflake_transform:
       type: snowflake
       account: wtxmxbo-ho19846
       user: LAMVU
-      password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}"
+      password: Hoksaodau123456@
+      # password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}"
       role: ACCOUNTADMIN
       database: CRYPTO_DB
       warehouse: COMPUTE_WH
