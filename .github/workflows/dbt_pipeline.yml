@@ -31,20 +31,17 @@ jobs:
         run: poetry install --no-root
 
       - name: dbt debug (kiểm tra kết nối)
-        working-directory: snowflake_transform
-        run: poetry run dbt debug --profiles-dir ../
+        run: poetry run dbt debug --profiles-dir ./
 
       - name: dbt run (transform)
-        working-directory: snowflake_transform
-        run: poetry run dbt run --target prod --profiles-dir ../
+        run: poetry run dbt run --target prod --profiles-dir ./
 
       - name: dbt test
-        working-directory: snowflake_transform
-        run: poetry run dbt test --target prod --profiles-dir ../
+        run: poetry run dbt test --target prod --profiles-dir ./
 
       - name: Upload dbt logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: dbt-logs
-          path: snowflake_transform/logs/
+          path: logs/

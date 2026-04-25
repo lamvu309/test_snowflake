@@ -2,12 +2,9 @@
 .env
 *.env
 
-# dbt
-snowflake_transform/target/
-snowflake_transform/dbt_packages/
-snowflake_transform/logs/
-
 # Python / Poetry
 __pycache__/
 *.pyc
 .venv/
+
+logs/
