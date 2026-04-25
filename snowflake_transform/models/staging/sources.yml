@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: raw
+    database: CRYPTO_DB
+    schema: RAW
+    tables:
+      - name: ohlcv_raw
+        description: "Raw OHLCV candlestick data loaded from S3"
+        columns:
+          - name: symbol
+            description: "Trading pair, e.g. BTCUSDT"
+          - name: open_time
+            description: "Candle open timestamp (UTC)"
+          - name: close_time
+            description: "Candle close timestamp (UTC)"
+          - name: open
+            description: "Opening price"
+          - name: high
+            description: "Highest price in candle"
+          - name: low
+            description: "Lowest price in candle"
+          - name: close
+            description: "Closing price"
+          - name: volume
+            description: "Total volume traded"
+          - name: trades_count
+            description: "Number of trades in candle"
